@@ -75,6 +75,7 @@ h1 {
   position:relative; margin:0; padding:12px; background:#fffaf0;
   box-shadow:0 26px 64px rgba(34,28,19,.2); transform:rotate(1.6deg);
 }
+.hero-collage picture { display:block; }
 .hero-collage img { width:100%; aspect-ratio:1.3/1; object-fit:cover; object-position:center; filter:saturate(.9) contrast(1.02); }
 .hero-collage figcaption {
   padding:14px 10px 7px; font-family:"Segoe Print",cursive; font-size:15px; font-weight:700;
@@ -155,6 +156,7 @@ h1 {
 .case-2 { grid-column:8 / 13; margin-top:70px; transform:rotate(1.5deg); }
 .case-3 { grid-column:3 / 11; margin-top:8px; transform:rotate(.6deg); }
 .case-image { overflow:hidden; border-bottom:1px solid var(--line); }
+.case-image picture { display:block; }
 .case-image img { width:100%; aspect-ratio:16/9; object-fit:cover; }
 .case-3 .case-image img { object-position:center 42%; }
 .case-copy { padding:25px 28px 28px; }
@@ -162,6 +164,14 @@ h1 {
 .case-copy h3 { margin:8px 0 13px; font-size:24px; }
 .case-copy p { margin:0; color:var(--muted); line-height:1.5; }
 .legal-note { max-width:760px; margin:48px auto 0; color:var(--muted); font-size:12px; line-height:1.55; text-align:center; }
+.cases-cta { margin-top:28px; text-align:center; }
+.text-button {
+  display:inline-flex; align-items:center; gap:14px; padding:13px 19px;
+  border:2px solid var(--ink); background:rgba(255,255,255,.25);
+  font-weight:900; text-decoration:none; box-shadow:4px 4px 0 rgba(29,33,30,.18);
+  transition:transform .16s ease,box-shadow .16s ease;
+}
+.text-button:hover { transform:translate(2px,2px); box-shadow:2px 2px 0 rgba(29,33,30,.18); }
 
 .format-section .section-heading { align-items:center; }
 .format-section .hand-note { font-size:26px; color:var(--green); text-align:center; }
@@ -180,6 +190,27 @@ h1 {
 .underline-note {
   padding:20px; border:2px solid var(--ink); background:rgba(255,255,255,.25);
   font-family:"Segoe Print",cursive; line-height:1.5; transform:rotate(-1deg);
+}
+
+.faq-section { border-top:1px solid var(--line); }
+.faq-section .section-heading { align-items:start; }
+.faq-list { max-width:960px; margin:0 auto; border-top:2px solid var(--ink); }
+.faq-list details { border-bottom:1px solid var(--line); }
+.faq-list summary {
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+  padding:25px 4px; cursor:pointer; font-size:clamp(20px,2.4vw,29px);
+  font-weight:850; letter-spacing:-.025em; list-style:none;
+}
+.faq-list summary::-webkit-details-marker { display:none; }
+.faq-list summary:after {
+  content:"+"; flex:0 0 auto; display:grid; place-items:center; width:38px; height:38px;
+  border:2px solid var(--ink); border-radius:50%; color:var(--red);
+  font-family:"Segoe Print",cursive; font-size:25px; line-height:1;
+}
+.faq-list details[open] summary:after { content:"−"; }
+.faq-list details p {
+  max-width:760px; margin:0; padding:0 64px 27px 4px;
+  color:var(--muted); font-size:17px; line-height:1.6;
 }
 
 .final-cta { padding:100px 34px; color:var(--paper-light); background:var(--green); }
@@ -238,6 +269,8 @@ footer {
   .cases-grid { gap:28px; }
   .case-copy { padding:20px; }
   .case-copy strong { font-size:46px; }
+  .faq-list summary { padding-block:21px; }
+  .faq-list details p { padding-right:4px; }
   .steps li { grid-template-columns:58px 1fr; min-height:84px; }
   .steps span { font-size:21px; }
   .final-cta { padding:78px 20px 92px; }
