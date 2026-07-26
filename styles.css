@@ -4,6 +4,7 @@
   --ink: #1d211e;
   --muted: #62645d;
   --green: #1f725d;
+  --green-bright: #78d2ad;
   --acid: #d8f43f;
   --red: #b94b35;
   --line: rgba(29, 33, 30, .24);
@@ -33,10 +34,41 @@ h1,h2,h3,p,figure { margin-top: 0; }
   padding: 20px 34px;
   border-bottom: 1px solid var(--line);
 }
-.brand { display:flex; align-items:center; gap:12px; font-weight:900; text-decoration:none; letter-spacing:-.02em; }
+.brand {
+  display:flex; align-items:center; gap:15px; color:var(--green);
+  text-decoration:none;
+}
 .brand-mark {
-  display:grid; place-items:center; width:44px; height:44px; border:2px solid var(--ink);
-  border-radius:50%; font-size:12px; transform:rotate(-6deg);
+  position:relative; display:block; width:66px; height:58px; flex:0 0 auto;
+  border:3px solid var(--green); border-radius:48% 52% 46% 54%;
+  transform:rotate(-4deg); box-shadow:3px 3px 0 rgba(31,114,93,.18);
+}
+.brand-mark:before,.brand-mark:after {
+  content:""; position:absolute; top:27px; height:3px; background:var(--green);
+  transform-origin:left center;
+}
+.brand-mark:before { left:11px; width:20px; transform:rotate(-15deg); }
+.brand-mark:after { right:10px; width:20px; transform:rotate(13deg); }
+.brand-mark i {
+  position:absolute; top:21px; width:11px; height:11px;
+  border:3px solid var(--green); border-radius:50%; background:var(--paper-light);
+}
+.brand-mark i:nth-child(1) { left:7px; }
+.brand-mark i:nth-child(2) { left:27px; top:14px; border-color:var(--red); transform:rotate(8deg); }
+.brand-mark i:nth-child(3) { right:6px; top:24px; }
+.brand-mark b {
+  position:absolute; right:-5px; top:-12px; color:var(--red);
+  font-family:"Segoe Print","Bradley Hand",cursive; font-size:25px;
+  transform:rotate(7deg);
+}
+.brand-name { display:flex; flex-direction:column; line-height:.9; transform:rotate(-1deg); }
+.brand-name small {
+  margin-left:3px; font-family:"Segoe Print","Bradley Hand",cursive;
+  font-size:13px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+}
+.brand-name strong {
+  font-family:"Segoe Print","Bradley Hand",cursive;
+  font-size:29px; font-weight:900; letter-spacing:-.06em;
 }
 .header-link { font-size:14px; font-weight:800; text-underline-offset:6px; }
 
@@ -51,6 +83,8 @@ h1,h2,h3,p,figure { margin-top: 0; }
 h1 {
   max-width:760px; margin-bottom:28px; font-size:clamp(58px,6.4vw,100px);
   line-height:.91; letter-spacing:-.072em; text-wrap:balance;
+  color:var(--green); font-family:"Segoe Print","Bradley Hand",cursive;
+  font-weight:900;
 }
 .marker { position:relative; z-index:0; }
 .marker:after {
@@ -96,8 +130,10 @@ h1 {
 }
 .section h2,.final-cta h2 {
   margin-bottom:0; font-size:clamp(42px,5vw,72px); line-height:.99; letter-spacing:-.055em; text-wrap:balance;
+  color:var(--green); font-family:"Segoe Print","Bradley Hand",cursive;
+  font-weight:900;
 }
-.section h2 em { font-family:"Segoe Print",cursive; color:var(--red); font-size:.78em; font-style:normal; letter-spacing:-.04em; }
+.section h2 em { font-family:"Segoe Print",cursive; color:var(--green); font-size:.78em; font-style:normal; letter-spacing:-.04em; }
 .section-heading p:not(.hand-note) { margin-bottom:0; color:var(--muted); font-size:18px; line-height:1.6; }
 .hand-note,.hand-label,.cta-note {
   font-family:"Segoe Print","Bradley Hand",cursive; font-weight:800; line-height:1.25;
@@ -112,7 +148,10 @@ h1 {
 .loss-card { position:relative; min-height:250px; padding:26px 24px; border-right:1px dashed var(--line); }
 .loss-card:last-child { border:0; }
 .loss-card > span { color:var(--red); font-family:"Segoe Print",cursive; font-size:18px; font-weight:900; }
-.loss-card h3 { margin:40px 0 15px; font-size:23px; }
+.loss-card h3 {
+  margin:40px 0 15px; color:var(--green);
+  font-family:"Segoe Print","Bradley Hand",cursive; font-size:23px;
+}
 .loss-card p { margin:0; color:var(--muted); font-size:15px; line-height:1.55; }
 .loss-card i {
   position:absolute; z-index:2; right:-18px; top:48%; font-family:"Segoe Print",cursive;
@@ -130,6 +169,7 @@ h1 {
     repeating-linear-gradient(90deg,transparent 0 48px,rgba(255,255,255,.02) 48px 49px),var(--ink);
 }
 .dark-inner { max-width:1240px; }
+.dark-section h2 { color:var(--green-bright); }
 .result-heading { grid-template-columns:1fr; max-width:960px; }
 .chalk { font-family:"Segoe Print",cursive; color:var(--acid); font-size:.82em; }
 .deliverables { display:grid; grid-template-columns:.85fr 1.15fr; gap:90px; align-items:center; }
@@ -168,7 +208,10 @@ h1 {
 .case-3 .case-image img { object-position:center 42%; }
 .case-copy { padding:25px 28px 28px; }
 .case-copy strong { display:block; color:var(--green); font-size:clamp(42px,5vw,74px); line-height:.95; letter-spacing:-.06em; }
-.case-copy h3 { margin:8px 0 13px; font-size:24px; }
+.case-copy h3 {
+  margin:8px 0 13px; color:var(--green);
+  font-family:"Segoe Print","Bradley Hand",cursive; font-size:24px;
+}
 .case-copy p { margin:0; color:var(--muted); line-height:1.5; }
 .case-more {
   display:inline-block; margin-top:20px; color:var(--red);
@@ -227,7 +270,7 @@ h1 {
 
 .final-cta { padding:100px 34px; color:var(--paper-light); background:var(--green); }
 .cta-inner { position:relative; max-width:1040px; margin:auto; text-align:center; }
-.final-cta h2 { max-width:900px; margin:0 auto 28px; }
+.final-cta h2 { max-width:900px; margin:0 auto 28px; color:var(--paper-light); }
 .final-cta p:not(.eyebrow) { max-width:720px; margin:0 auto 34px; font-size:18px; line-height:1.55; }
 .button {
   display:inline-flex; align-items:center; justify-content:center; gap:30px; min-height:64px;
@@ -250,14 +293,19 @@ footer {
 .case-detail h1 { max-width:1000px; }
 .case-lead { max-width:800px; margin-bottom:44px; color:var(--muted); font-size:22px; line-height:1.55; }
 .case-detail-image { display:block; padding:12px; background:#fffaf0; box-shadow:10px 12px 0 rgba(29,33,30,.14); }
-.case-detail-image img { width:100%; aspect-ratio:16/9; object-fit:cover; }
+.case-detail-image { max-width:984px; margin-inline:auto; }
+.case-detail-image img { width:960px; height:auto; aspect-ratio:16/9; object-fit:cover; }
 .case-facts { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin:52px 0 80px; }
 .case-facts article { padding:24px; border:2px solid var(--ink); background:rgba(255,255,255,.25); }
 .case-facts span { display:block; margin-bottom:16px; color:var(--red); font-size:12px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; }
 .case-facts strong { display:block; color:var(--green); font-size:clamp(32px,4vw,52px); line-height:1; letter-spacing:-.05em; }
 .case-facts p { margin:10px 0 0; color:var(--muted); line-height:1.45; }
 .case-story { max-width:800px; margin:auto; }
-.case-story h2 { margin:54px 0 16px; font-size:clamp(32px,4vw,48px); letter-spacing:-.04em; }
+.case-story h2 {
+  margin:54px 0 16px; color:var(--green);
+  font-family:"Segoe Print","Bradley Hand",cursive;
+  font-size:clamp(32px,4vw,48px); letter-spacing:-.04em;
+}
 .case-story > p { color:#393c36; font-size:19px; line-height:1.7; }
 .case-story aside { margin-top:54px; padding:25px 28px; border-left:5px solid var(--red); background:rgba(255,255,255,.3); }
 .case-story aside b { font-family:"Segoe Print","Bradley Hand",cursive; font-size:20px; }
@@ -280,7 +328,18 @@ footer {
 
 @media (max-width: 640px) {
   .topbar { padding:16px 20px; }
-  .brand > span:last-child { font-size:13px; }
+  .brand { gap:9px; }
+  .brand-mark { width:48px; height:43px; border-width:2px; }
+  .brand-mark:before,.brand-mark:after { top:20px; height:2px; }
+  .brand-mark:before { left:7px; width:16px; }
+  .brand-mark:after { right:6px; width:15px; }
+  .brand-mark i { top:15px; width:9px; height:9px; border-width:2px; }
+  .brand-mark i:nth-child(1) { left:4px; }
+  .brand-mark i:nth-child(2) { left:19px; top:10px; }
+  .brand-mark i:nth-child(3) { right:3px; top:18px; }
+  .brand-mark b { right:-4px; top:-10px; font-size:19px; }
+  .brand-name small { font-size:9px; }
+  .brand-name strong { font-size:20px; }
   .header-link { font-size:12px; }
   .hero { padding:46px 20px 72px; gap:38px; }
   h1 { font-size:52px; }
