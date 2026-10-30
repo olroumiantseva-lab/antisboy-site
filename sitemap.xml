@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://antisboy.ru/</loc>
-  </url>
-  <url>
-    <loc>https://antisboy.ru/case-gpt.html</loc>
-  </url>
-  <url>
-    <loc>https://antisboy.ru/case-finance.html</loc>
-  </url>
-  <url>
-    <loc>https://antisboy.ru/case-relotera.html</loc>
-  </url>
+  <url><loc>https://antisboy.ru/</loc></url>
+  <url><loc>https://antisboy.ru/case-gpt.html</loc></url>
+  <url><loc>https://antisboy.ru/case-finance.html</loc></url>
+  <url><loc>https://antisboy.ru/case-relotera.html</loc></url>
+  <url><loc>https://antisboy.ru/privacy/</loc></url>
+  <url><loc>https://antisboy.ru/offer/</loc></url>
 </urlset>
